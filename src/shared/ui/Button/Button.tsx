@@ -1,34 +1,28 @@
 import React from 'react';
 import classNames from "classnames";
 import styles from './Button.module.scss';
-import { additionalClasses } from '@shared/lib/additionalClasses';
+import { addHashToClasses } from '@shared/lib/additionalClasses';
 
-interface ButtonProps {
-    className?: string;
-    onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
-    disabled?: boolean;
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     children: React.ReactNode;
-    type?: 'button' | 'submit' | 'reset'; 
 };
 
 export const Button: React.FC<ButtonProps> = ({
     className,
-    onClick,
     disabled = false,
     children,
-    type = 'button',
+    ...props
   }) => {
 
-    const buttonClasses = classNames(styles.button, additionalClasses(className, styles), {
+    const buttonClasses = classNames(styles.button, addHashToClasses({styles, className}), {
         [styles.disabled]: disabled,
     });
 
     return (
         <button
         className={buttonClasses}
-        onClick={onClick}
         disabled={disabled}
-        type={type}
+        {...props}
         >
         {children}
         </button>

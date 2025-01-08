@@ -1,5 +1,6 @@
-interface Styles {
-    [key: string]: string;
+interface AddHashToClasses {
+    styles: Record<string, string>;
+    className: string | undefined;
 }
 
 /**
@@ -24,7 +25,7 @@ interface Styles {
  * ```
  */
 
-export const additionalClasses = (cls: string | undefined, styles: Styles) => {
-    const result = (cls?.split(' '))?.map((style: string) => styles[style])
+export const addHashToClasses = ({className, styles}: AddHashToClasses) => {
+    const result = (className?.split(' '))?.map((style: string) => styles[style])
     return result?.join(' ');
 }
