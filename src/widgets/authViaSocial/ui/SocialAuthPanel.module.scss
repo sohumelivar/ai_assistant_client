@@ -1,3 +1,38 @@
 .SocialAuthPanel {
-    background-color: red;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 32.875rem;
+    height: 5.1875rem;
+}
+
+.orSignUpWith {
+    display: flex;
+    align-items: center;
+    width: 32.875rem;
+    height: 0.8125rem;
+    font-size: global.$fontSizeBase;
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  .line {
+    flex-grow: 1;
+    height: 1px;
+    background-color: #E4E4E4;
+    margin: 0 10px;
+  }
+
+  .text {
+    color: #E4E4E4;
+    font-weight: 500;
+  }
+
+
+.buttonsDiv {
+    display: flex;
+    justify-content: space-around;
+    width: 22.8125rem;
+    height: 3.125rem;
 }

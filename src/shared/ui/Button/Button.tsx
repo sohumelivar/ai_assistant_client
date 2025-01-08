@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from "classnames";
 import styles from './Button.module.scss';
-import { addHashToClasses } from '@shared/lib/additionalClasses';
+import { addHashToClasses } from '@shared/lib/addHashToClasses';
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     children: React.ReactNode;
